@@ -36,7 +36,7 @@ abstract class TestAbstract extends TestCase
     /**
      * @return void
      */
-    private function truncateTables()
+    private function truncateTables(): void
     {
         $exclusions = ['migrations'];
 
@@ -54,7 +54,7 @@ abstract class TestAbstract extends TestCase
     /**
      * @return array
      */
-    private function getTables()
+    private function getTables(): array
     {
         if (env('DB_CONNECTION') == 'sqlite') {
             return DB::select("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;");
@@ -66,7 +66,7 @@ abstract class TestAbstract extends TestCase
     /**
      * @return void
      */
-    protected function refreshTestDatabase()
+    protected function refreshTestDatabase(): void
     {
         if (config('database.default') !== 'sqlite') {
             if (! RefreshDatabaseState::$migrated) {
