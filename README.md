@@ -2,7 +2,7 @@
 
 Require this package in your composer.json and update composer. This will download the package
 
-    composer require bizarg/test
+    composer require bizarg/sqlite-test
 
 ## Installation
 
